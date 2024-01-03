@@ -1,0 +1,32 @@
+# cpu
+*/* CPU_FLAGS_X86: aes avx avx2 f16c fma3 mmx mmxext pclmul popcnt rdrand sha sse sse2 sse3 sse4_1 sse4_2 sse4a ssse3
+
+# system
+sys-kernel/gentoo-sources experimental symlink
+sys-apps/openrc -netifrc
+
+## graphics
+x11-libs/libdrm video_cards_radeon
+
+## networking
+net-misc/networkmanager -modemmanager
+net-wireless/wpa_supplicant dbus
+
+## sound
+media-video/pipewire sound-server
+media-sound/pulseaudio -daemon
+
+# development
+sys-devel/llvm zstd
+sys-devel/lld zstd
+dev-lang/rust rust-src parallel-compiler system-llvm rust-analyzer rustfmt clippy miri
+
+# desktop
+## bar
+gui-apps/yambar -alsa -dwl -i3 -pulseaudio
+
+## firefox
+www-client/firefox openh264 system-png system-python-libs -telementry
+media-libs/libpng apng
+media-libs/libvpx postproc
+

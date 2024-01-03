@@ -1,0 +1,58 @@
+#!/usr/bin/env bash
+
+# current volume
+SINK=$(pactl list short sinks | sed -e 's,^\([0-9][0-9]*\)[^0-9].*,\1,' | head -n 1)
+VOL=$(pactl list sinks | grep '^[[:space:]]Volume:' | head -n $(($SINK + 1)) | tail -n 1 | sed -e 's,.* \([0-9][0-9]*\)%.*,\1,')
+
+# change in volume
+STEPS=5
+
+if [[ $1 == "up" ]]; then
+    # increase the volume
+    NEW=$VOL
+    (( NEW += $STEPS ))
+    if [[ $NEW -gt 100 ]]; then
+        NEW=100
+    fi
+    pactl set-sink-volume @DEFAULT_SINK@ $NEW%
+    exit
+elif [[ $1 == "down" ]]; then
+    # decrease the volume
+    NEW=$VOL
+    (( NEW -= $STEPS ))
+    if [[ $NEW -lt 0 ]]; then
+        NEW=0
+    fi
+    pactl set-sink-volume @DEFAULT_SINK@ $NEW%
+    exit
+elif [[ $1 == "mute" ]]; then
+    # mute
+    pactl set-sink-mute @DEFAULT_SINK@ 1
+    exit
+elif [[ $1 == "unmute" ]]; then
+    # unmute
+    pactl set-sink-mute @DEFAULT_SINK@ 0
+    exit
+elif [[ $1 == "toggle" ]]; then
+    # toggle mute
+    pactl set-sink-mute @DEFAULT_SINK@ toggle
+    exit
+elif [[ $1 != "" ]]; then
+    # set the volume
+    NEW=$(echo $1 | sed "s/%//")
+    if [[ $NEW -lt 0 ]]; then
+        NEW=0
+    elif [[ $NEW -gt 100 ]]; then
+        NEW=100
+    fi
+    pactl set-sink-volume @DEFAULT_SINK@ $NEW%
+    exit
+fi
+
+# get the volume
+STATE=$(pactl get-sink-mute @DEFAULT_SINK@ | cut -d " " -f2-)
+if [[ $STATE == "yes" ]]; then
+    echo "$VOL%(muted)"
+    exit
+fi
+echo $VOL%
