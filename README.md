@@ -1,3 +1,4 @@
+```
                   __ _
   ___ ___  _ __  / _(_) __ _
  / __/ _ \| '_ \| |_| |/ _` |
@@ -9,4 +10,5 @@
 * terminal: foot + tmux
 * shell: fish
 * editor: neovim
+```
 
