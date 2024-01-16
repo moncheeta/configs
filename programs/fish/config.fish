@@ -18,7 +18,7 @@ set -g GPG_TTY $(tty)
 
 # aliases
 ## system
-alias bri "brightness"
+alias bri "light -S"
 alias vol "volume"
 alias blue "bluetuith"
 alias lock "swaylock"
@@ -26,7 +26,8 @@ alias slp "loginctl suspend"
 alias res "loginctl reboot"
 alias shut "loginctl poweroff"
 
-## file
+## files
+alias up "cd .."
 alias ls "eza -A --git"
 alias ll "eza -lA --git"
 alias cp "cp -rv"
@@ -41,22 +42,28 @@ alias x "exit"
 alias clr "clear"
 
 ## programs
+alias ed "$EDITOR"
+alias web "$BROWSER"
+
 ### system
 alias top "htop"
 alias dsk "duf"
+
+### desktop environment
+alias wm "dbus-launch --exit-with-session river"
+
+### office
+#alias mail "himalaya"
+alias vw "glow"
+alias pst "present"
+alias ss "sc-im"
+
+### media
 alias mus "cmus"
 alias play "playerctl play"
 alias pause "playerctl pause"
 alias skip "playerctl next"
 alias rewind "playerctl previous"
-
-### office
-alias ed "$EDITOR"
-alias web "$BROWSER"
-#alias mail "himalaya"
-alias vw "glow"
-alias pst "present"
-alias ss "sc-im"
 
 ## git
 alias clone "git clone"

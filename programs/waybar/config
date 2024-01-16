@@ -16,7 +16,7 @@
 	},
     "pulseaudio": {
         "format": "vol: {volume}%",
-        "format-muted": "Muted",
+        "format-muted": "muted",
     },
     "bluetooth": {
         "format": "",
@@ -32,7 +32,7 @@
     },
     "cpu": {
         "interval": 5,
-        "format": "cpu: {:0.1f}%"
+        "format": "cpu: {usage}%"
     },
     "memory": {
         "interval": 5,
