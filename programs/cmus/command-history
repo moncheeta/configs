@@ -1,0 +1,16 @@
+q
+player-play
+set status_display_program=/usr/local/bin/cmus-notify
+player-next-album
+colorscheme default
+colorscheme night
+colorscheme gruvbox-alt
+colorscheme gray-88
+colorscheme dracula
+colorscheme gruvbox
+add music/relax/
+add music/work/
+pl-create work
+rand
+wq
+pl-create relax

@@ -1,20 +1,48 @@
 #!/bin/sh
 
-wlr-randr --output DP-2 --pos -1920,-1080 --scale 0.75
+# input
+riverctl map normal Super+Shift E exit
 
+## keyboard
 riverctl keyboard-layout "us(colemak)"
+for mode in normal locked
+do
+    riverctl map $mode None XF86AudioRaiseVolume spawn "volume up"
+    riverctl map $mode None XF86AudioLowerVolume spawn "volume down"
+    riverctl map $mode None XF86AudioMute spawn "volume toggle"
 
+    riverctl map $mode None XF86MonBrightnessUp spawn "light -A 5"
+    riverctl map $mode None XF86MonBrightnessDown spawn "light -U 5"
+done
+
+## cursor
+riverctl input "pointer-1267-12693-ELAN0678:00_04F3:3195_Touchpad" tap enabled
+riverctl input "pointer-1267-12693-ELAN0678:00_04F3:3195_Touchpad" natural-scroll enabled
+riverctl hide-cursor timeout 2500
+riverctl hide-cursor when-typing enabled
+riverctl focus-follows-cursor always
+
+# programs
+## startup
+wlr-randr --output eDP-1 --pos 2560,0 --output DP-2 --pos 0,0 --scale 0.75
+riverctl spawn "light -I"
+riverctl spawn "gentoo-pipewire-launcher"
+riverctl spawn "mako"
+riverctl spawn "pkill waybar; waybar"
+riverctl spawn "swayidle -w"
 riverctl spawn "foot --server"
+
+## keymaps
 riverctl map normal Super T spawn footclient
 riverctl map normal Super W spawn firefox
-riverctl spawn "light -I"
 
+# window actions
 riverctl map normal Super+Shift Return zoom
 riverctl map normal Super+Shift F toggle-fullscreen
 riverctl map normal Super+Shift Space toggle-float
 riverctl map normal Super+Shift C close
-riverctl map normal Super+Shift E exit
 
+# focus
 # riverctl map normal Super Up focus-view up
 # riverctl map normal Super Down focus-view down
 # riverctl map normal Super Left focus-view left
@@ -33,6 +61,7 @@ riverctl map normal Super Comma focus-output previous
 riverctl map normal Super+Shift Period send-to-output next
 riverctl map normal Super+Shift Comma send-to-output previous
 
+# layout
 riverctl map normal Super+Control Left send-layout-cmd rivertile "main-ratio -0.05"
 riverctl map normal Super+Control Right send-layout-cmd rivertile "main-ratio +0.05"
 
@@ -58,6 +87,10 @@ riverctl map-pointer normal Super BTN_LEFT move-view
 riverctl map-pointer normal Super BTN_RIGHT resize-view
 riverctl map-pointer normal Super BTN_MIDDLE toggle-float
 
+riverctl spawn "rivertile -view-padding 0 -outer-padding 0 -main-ratio 0.5"
+riverctl default-layout rivertile
+
+# tags
 for i in $(seq 1 9)
 do
     tags=$((1 << ($i - 1)))
@@ -72,27 +105,8 @@ all_tags=$(((1 << 32) - 1))
 riverctl map normal Super 0 set-focused-tags $all_tags
 riverctl map normal Super+Shift 0 set-view-tags $all_tags
 
-for mode in normal locked
-do
-    riverctl map $mode None XF86Eject spawn "eject -T"
-
-    riverctl map $mode None XF86AudioRaiseVolume spawn "pamixer -i 5"
-    riverctl map $mode None XF86AudioLowerVolume spawn "pamixer -d 5"
-    riverctl map $mode None XF86AudioMute spawn "pamixer --toggle-mute"
-
-    riverctl map $mode None XF86AudioMedia spawn "playerctl play-pause"
-    riverctl map $mode None XF86AudioPlay spawn "playerctl play-pause"
-    riverctl map $mode None XF86AudioPrev spawn "playerctl previous"
-    riverctl map $mode None XF86AudioNext spawn "playerctl next"
-
-    riverctl map $mode None XF86MonBrightnessUp spawn "light -A 5"
-    riverctl map $mode None XF86MonBrightnessDown spawn "light -U 5"
-done
-
-riverctl background-color 0x000000
-riverctl border-color-focused 0x93a1a1
-riverctl border-color-unfocused 0x586e75
-
-riverctl spawn "rivertile -view-padding 0"
-riverctl default-layout rivertile
+# colors
+riverctl background-color 0x1b1b1b
+riverctl border-color-focused 0xebdbb2
+riverctl border-color-unfocused 0x928374
 

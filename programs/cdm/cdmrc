@@ -1,0 +1,18 @@
+#!/bin/sh
+
+binlist=(
+    "dbus-launch --exit-with-session river"
+    "fish --login"
+    "loginctl restart"
+    "loginctl poweroff"
+)
+namelist=(wm sh res shut)
+flaglist=(C C C C)
+countfrom=0
+
+dialogrc=/usr/share/cdm/themes/blackandwhite
+dialogrc=/usr/share/cdm/themes/cdm
+dialogrc=/usr/share/cdm/themes/default
+dialogrc=/usr/share/cdm/themes/ed
+dialogrc=/usr/share/cdm/themes/elinks
+

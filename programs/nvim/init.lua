@@ -127,14 +127,26 @@ require("lazy").setup({
     },
 	-- ui
     {
-        "sainnhe/gruvbox-material",
+        "morhetz/gruvbox",
         config = function()
-            vim.cmd("colorscheme gruvbox-material")
+            vim.g.gruvbox_contrast_dark = "hard"
+            vim.cmd("colorscheme gruvbox")
         end,
     },
-    "sainnhe/sonokai",
-    "bluz71/vim-moonfly-colors",
-	"tpope/vim-vividchalk",
+    {
+        "tpope/vim-vividchalk",
+        -- config = function()
+        --     vim.cmd("colorscheme vividchalk")
+        --     vim.cmd("hi CursorLine term=bold cterm=bold gui=bold")
+        --     vim.cmd("hi CursorLineNr term=bold cterm=bold gui=bold")
+        -- end,
+    },
+    {
+        "bluz71/vim-moonfly-colors",
+        -- config = function()
+        --     vim.cmd("colorscheme moonfly")
+        -- end,
+    },
 	"lukas-reineke/indent-blankline.nvim",
     {
         "hrsh7th/nvim-cmp",

@@ -3,6 +3,15 @@
 # adjustments
 ## fish
 set fish_greeting
+set -g hydro_symbol_prompt "\$"
+set -g hydro_symbol_git_dirty "*"
+set -g hydro_symbol_git_ahead ">"
+set -g hydro_symbol_git_behind "<"
+
+## xdg
+if test -z "$XDG_RUNTIME_DIR"
+    set -g XDG_RUNTIME_DIR $(mktemp -d /tmp/$(id -u)-runtime-dir.XXX)
+end
 
 ## gpg
 set -g GPG_TTY $(tty)
@@ -11,6 +20,8 @@ set -g GPG_TTY $(tty)
 ## system
 alias bri "brightness"
 alias vol "volume"
+alias blue "bluetuith"
+alias lock "swaylock"
 alias slp "loginctl suspend"
 alias res "loginctl reboot"
 alias shut "loginctl poweroff"
@@ -34,6 +45,10 @@ alias clr "clear"
 alias top "htop"
 alias dsk "duf"
 alias mus "cmus"
+alias play "playerctl play"
+alias pause "playerctl pause"
+alias skip "playerctl next"
+alias rewind "playerctl previous"
 
 ### office
 alias ed "$EDITOR"
@@ -64,5 +79,5 @@ alias pr "gh pr"
 alias release "gh release"
 
 # init
-eval $(zoxide init fish)
+zoxide init fish | source
 

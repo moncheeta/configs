@@ -1,0 +1,59 @@
+* {
+    font-family: "JetBrainsMono Nerd Font", "Font Awesome 6 Free";
+    font-size: 12px;
+
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+window#waybar {
+    background: #fabd2f;
+}
+
+.modules-left {
+    background: #1b1b1b;
+    padding-left: 0px;
+}
+
+.modules-right {
+    background: #1b1b1b;
+    padding-right: 0px;
+}
+
+#tags button {
+    color: #ebdbb2;
+    border-color: #1b1b1b;
+    border-radius: 0px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+#tags button.focused {
+    color: #1b1b1b;
+    background: #fabd2f;
+    border-color: #fabd2f;
+}
+
+#tags button:hover {
+    background: #fabd2f;
+}
+
+#window, #mpris, #pulseaudio, #bluetooth, #backlight, #cpu, #memory, #disk, #network, #battery, #idle_inhibitor, #clock {
+    color: #ebdbb2;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+@keyframes blink {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+#battery.critical:not(.charging) {
+    animation: blink 0.5s infinite;
+}
+
