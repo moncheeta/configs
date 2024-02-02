@@ -11,8 +11,8 @@ do
     riverctl map $mode None XF86AudioLowerVolume spawn "volume down"
     riverctl map $mode None XF86AudioMute spawn "volume toggle"
 
-    riverctl map $mode None XF86MonBrightnessUp spawn "light -A 5"
-    riverctl map $mode None XF86MonBrightnessDown spawn "light -U 5"
+    riverctl map $mode None XF86MonBrightnessUp spawn "light -AO 5"
+    riverctl map $mode None XF86MonBrightnessDown spawn "light -UO 5"
 done
 
 ## cursor
@@ -27,6 +27,7 @@ riverctl spawn "light -I"
 riverctl spawn "gentoo-pipewire-launcher"
 riverctl spawn "mako"
 riverctl spawn "pkill waybar; waybar"
+riverctl spawn "swayidle"
 riverctl spawn "foot --server"
 
 ## keymaps

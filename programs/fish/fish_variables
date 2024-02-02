@@ -16,11 +16,11 @@ SETUVAR _hydro_git_2497:master\x2a\x20
 SETUVAR _hydro_git_2809:master\x2a\x20
 SETUVAR _hydro_git_3123:master\x2a\x20
 SETUVAR _hydro_git_3402:\x1d
+SETUVAR _hydro_git_3481:fprintd\x20
 SETUVAR _hydro_git_3553:master\x2a\x20
-SETUVAR _hydro_git_5477:master\x2a\x20
+SETUVAR _hydro_git_4753:master\x2a\x20\x3e1\x20
 SETUVAR _hydro_git_8088:master\x2a\x20
 SETUVAR _hydro_git_8678:master\x2a\x20
-SETUVAR _hydro_git_8804:master\x2a\x20
 SETUVAR _hydro_git_8917:master\x2a\x20
 SETUVAR _hydro_git_9794:master\x2a\x20
 SETUVAR fish_color_autosuggestion:555\x1ebrblack

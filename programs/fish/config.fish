@@ -21,8 +21,8 @@ set -g GPG_TTY $(tty)
 alias bri "light -SO"
 alias vol "volume"
 alias blue "bluetuith"
-alias lock "swaylock"
-alias slp "loginctl suspend"
+alias lock "swaylock --fingerprint"
+alias slp "sudo su -c \"echo 'freeze' > /sys/power/state\""
 alias res "loginctl reboot"
 alias shut "loginctl poweroff"
 
