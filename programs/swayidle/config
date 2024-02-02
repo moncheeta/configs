@@ -1,4 +1,0 @@
-timeout 60 swaylock
-before-sleep swaylock
-lock swaylock
-

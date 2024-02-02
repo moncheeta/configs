@@ -18,18 +18,15 @@ done
 ## cursor
 riverctl input "pointer-1267-12693-ELAN0678:00_04F3:3195_Touchpad" tap enabled
 riverctl input "pointer-1267-12693-ELAN0678:00_04F3:3195_Touchpad" natural-scroll enabled
-riverctl hide-cursor timeout 2500
+riverctl hide-cursor timeout 5000
 riverctl hide-cursor when-typing enabled
-riverctl focus-follows-cursor always
 
 # programs
 ## startup
-wlr-randr --output eDP-1 --pos 2560,0 --output DP-2 --pos 0,0 --scale 0.75
 riverctl spawn "light -I"
 riverctl spawn "gentoo-pipewire-launcher"
 riverctl spawn "mako"
 riverctl spawn "pkill waybar; waybar"
-riverctl spawn "swayidle -w"
 riverctl spawn "foot --server"
 
 ## keymaps

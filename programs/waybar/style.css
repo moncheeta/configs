@@ -35,7 +35,9 @@ window#waybar {
 }
 
 #tags button:hover {
+    color: #1b1b1b;
     background: #fabd2f;
+    border-color: #fabd2f;
 }
 
 #window, #mpris, #pulseaudio, #bluetooth, #backlight, #cpu, #memory, #disk, #network, #battery, #idle_inhibitor, #clock {
@@ -44,16 +46,24 @@ window#waybar {
     padding-right: 8px;
 }
 
+#battery.warning:not(.charging) {
+    color: #fabd2f;
+}
+
 @keyframes blink {
     0% {
         opacity: 0;
     }
-    100% {
+    50% {
         opacity: 1;
+    }
+    100% {
+        opacity: 0;
     }
 }
 
 #battery.critical:not(.charging) {
-    animation: blink 0.5s infinite;
+    color: #fb4934;
+    animation: blink 1s infinite;
 }
 

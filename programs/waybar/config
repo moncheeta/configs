@@ -16,7 +16,7 @@
 	},
     "pulseaudio": {
         "format": "vol: {volume}%",
-        "format-muted": "muted",
+        "format-muted": "vol: {volume}%(muted)",
     },
     "bluetooth": {
         "format": "",
@@ -56,7 +56,9 @@
         "interval": 5,
         "format": "bat: {capacity}%",
         "format-charging": "bat: {capacity}%^",
+        "tooltip-format": "empty in: {timeTo}\npower: {power:0.1f}W",
         "states": {
+            "warning": 20,
             "critical": 10
         }
     },

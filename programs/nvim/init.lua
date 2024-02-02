@@ -1,3 +1,6 @@
+-- terminal
+vim.o.termguicolors = true
+
 -- persistant undo
 vim.o.undodir = vim.fn.stdpath("data") .. "/nvim/undo"
 vim.o.undofile = true
@@ -19,7 +22,6 @@ vim.api.nvim_create_autocmd("BufWritePre", {
 })
 
 -- positioning
-vim.o.guicursor = "n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50,a:blinkwait700-blinkoff400-blinkon250-Cursor/lCursor,sm:block-blinkwait175-blinkoff150-blinkon175"
 vim.o.scrolloff = 999
 vim.o.number = true
 vim.o.relativenumber = true
@@ -75,7 +77,8 @@ vim.keymap.set('n', "<leader>q", function()
 	vim.cmd("wa")
 	vim.cmd("qa")
 end)
-vim.keymap.set('n', "<leader>x", "<cmd>wq<cr>")
+vim.keymap.set('n', "<leader>x", "<cmd>wq!<cr>")
+vim.keymap.set('n', "<leader>c", "<cmd>wq<cr>")
 vim.keymap.set('n', "<leader>h", "<cmd>vsplit<cr>")
 vim.keymap.set('n', "<leader>v", "<cmd>split<cr>")
 
@@ -111,14 +114,14 @@ require("lazy").setup({
 			{ "<leader>jb", "<cmd>lua require('buffer_manager.ui').toggle_quick_menu()<cr>" },
 		},
 	},
-	{
-		"gaborvecsei/memento.nvim",
-		keys = {
-			{ "<leader>jp", "<cmd>lua require('memento').toggle()<cr>" },
-		},
-	},
     -- selection
-    "gcmt/wildfire.vim",
+    {
+        "sustech-data/wildfire.nvim",
+        dependencies = { "nvim-treesitter/nvim-treesitter" },
+        config = function()
+            require("wildfire").setup()
+        end,
+    },
     {
         "numToStr/Comment.nvim",
         config = function()
@@ -147,7 +150,35 @@ require("lazy").setup({
         --     vim.cmd("colorscheme moonfly")
         -- end,
     },
-	"lukas-reineke/indent-blankline.nvim",
+    {
+        "lukas-reineke/indent-blankline.nvim",
+        config = function()
+            local highlight = {
+                "RainbowRed",
+                "RainbowYellow",
+                "RainbowBlue",
+                "RainbowOrange",
+                "RainbowGreen",
+                "RainbowViolet",
+                "RainbowCyan",
+            }
+
+            local hooks = require "ibl.hooks"
+            -- create the highlight groups in the highlight setup hook, so they are reset
+            -- every time the colorscheme changes
+            hooks.register(hooks.type.HIGHLIGHT_SETUP, function()
+                vim.api.nvim_set_hl(0, "RainbowRed", { fg = "#E06C75" })
+                vim.api.nvim_set_hl(0, "RainbowYellow", { fg = "#E5C07B" })
+                vim.api.nvim_set_hl(0, "RainbowBlue", { fg = "#61AFEF" })
+                vim.api.nvim_set_hl(0, "RainbowOrange", { fg = "#D19A66" })
+                vim.api.nvim_set_hl(0, "RainbowGreen", { fg = "#98C379" })
+                vim.api.nvim_set_hl(0, "RainbowViolet", { fg = "#C678DD" })
+                vim.api.nvim_set_hl(0, "RainbowCyan", { fg = "#56B6C2" })
+            end)
+
+            require("ibl").setup { indent = { highlight = highlight } }
+        end,
+    },
     {
         "hrsh7th/nvim-cmp",
         dependencies = {
@@ -155,19 +186,13 @@ require("lazy").setup({
             "hrsh7th/cmp-path",
             "hrsh7th/cmp-cmdline",
             "hrsh7th/cmp-nvim-lsp",
-            "saadparwaiz1/cmp_luasnip",
             "petertriho/cmp-git",
+            "saadparwaiz1/cmp_luasnip",
         },
         config = function()
             local cmp = require("cmp")
 
             cmp.setup({
-                snippet = {
-                    expand = function(args)
-                        require("luasnip").lsp_expand(args.body)
-                    end,
-                },
-
                 window = {
                   -- completion = cmp.config.window.bordered(),
                   -- documentation = cmp.config.window.bordered(),
@@ -186,7 +211,13 @@ require("lazy").setup({
                   { name = 'luasnip' },
                 }, {
                   { name = 'buffer' },
-                })
+                }),
+
+                snippet = {
+                    expand = function(args)
+                        require("luasnip").lsp_expand(args.body)
+                    end,
+                }
             })
 
             cmp.setup.filetype('gitcommit', {
@@ -221,7 +252,7 @@ require("lazy").setup({
             "williamboman/mason-lspconfig.nvim",
         },
     },
-    {
+   {
         "saadparwaiz1/cmp_luasnip",
         dependencies = {
             "L3MON4D3/LuaSnip",
@@ -264,7 +295,10 @@ require("lazy").setup({
                 changedelete = { text = '~' },
                 untracked    = { text = '?' },
             }
-        }
+        },
+        config = function()
+            require("gitsigns").setup()
+        end,
 	},
     "nvim-treesitter/nvim-treesitter-context",
 	{
@@ -338,10 +372,6 @@ require("lazy").setup({
 			{ "<leader>s", "<cmd>Telescope lsp_workspace_symbols<cr>" },
 		},
 	},
-    {
-        "ziglang/zig.vim",
-        ft = "zig",
-    },
 	-- git
     "itchyny/vim-gitbranch",
 	{

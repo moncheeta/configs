@@ -18,7 +18,7 @@ set -g GPG_TTY $(tty)
 
 # aliases
 ## system
-alias bri "light -S"
+alias bri "light -SO"
 alias vol "volume"
 alias blue "bluetuith"
 alias lock "swaylock"
@@ -29,6 +29,7 @@ alias shut "loginctl poweroff"
 ## files
 alias up "cd .."
 alias ls "eza -A --git"
+alias l "eza -lA --git"
 alias ll "eza -lA --git"
 alias cp "cp -rv"
 alias mv "mv -v"

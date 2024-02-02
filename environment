@@ -34,6 +34,10 @@ PASSWORD_STORE_DIR DEFAULT=${DATA_HOME}/password-store
 # git
 GIT_CONFIG_GLOBAL DEFAULT=${CONFIG_HOME}/git/config
 
+# c/c++
+CCACHE_DIR=/var/cache/ccache
+PATH DEFAULT=${CCACHE_DIR}/bin:${PATH}
+
 # cargo
 CARGO_HOME DEFAULT=${DATA_HOME}/cargo
 PATH DEFAULT=${PATH}:${CARGO_HOME}/bin

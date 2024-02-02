@@ -2,15 +2,21 @@
 */* CPU_FLAGS_X86: aes avx avx2 f16c fma3 mmx mmxext pclmul popcnt rdrand sha sse sse2 sse3 sse4_1 sse4_2 sse4a ssse3
 
 # system
-sys-kernel/gentoo-sources experimental symlink
+sys-kernel/gentoo-kernel strip
+sys-kernel/installkernel grub dracut
 sys-apps/openrc -netifrc
+app-admin/sudo -sendmail
+sys-apps/fwupd -minimal gnutls amdgpu fastboot flashrom nvme uefi
+virtual/libusb udev
 
 ## graphics
+media-libs/mesa X
 x11-libs/libdrm video_cards_radeon
 
 ## networking
 net-misc/networkmanager -modemmanager -bluetooth
 net-wireless/wpa_supplicant dbus
+net-wireless/bluez deprecated
 
 ## sound
 media-video/pipewire sound-server
@@ -29,7 +35,6 @@ dev-lang/rust rust-src parallel-compiler system-llvm rust-analyzer rustfmt clipp
 gui-wm/river X
 gui-libs/wlroots X
 x11-libs/libxkbcommon X
-media-libs/libglvnd X
 media-libs/libepoxy X
 
 ## bar
