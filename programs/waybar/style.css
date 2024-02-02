@@ -40,7 +40,7 @@ window#waybar {
     border-color: #fabd2f;
 }
 
-#window, #mpris, #pulseaudio, #bluetooth, #backlight, #cpu, #memory, #disk, #network, #battery, #idle_inhibitor, #clock {
+#window, #mpris, #pulseaudio, #backlight, #idle_inhibitor, #bluetooth, #network, #battery, #clock {
     color: #ebdbb2;
     padding-left: 8px;
     padding-right: 8px;
