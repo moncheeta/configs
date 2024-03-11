@@ -23,6 +23,8 @@ riverctl hide-cursor when-typing enabled
 
 # programs
 ## startup
+volume 25%
+volume mute
 riverctl spawn "light -I"
 riverctl spawn "gentoo-pipewire-launcher"
 riverctl spawn "mako"
@@ -104,7 +106,8 @@ riverctl map normal Super 0 set-focused-tags $all_tags
 riverctl map normal Super+Shift 0 set-view-tags $all_tags
 
 # colors
-riverctl background-color 0x1b1b1b
-riverctl border-color-focused 0xebdbb2
-riverctl border-color-unfocused 0x928374
+riverctl background-color 0x000000
+riverctl border-color-focused 0xd0bc00
+riverctl border-color-unfocused 0x595959
+riverctl border-width 3
 

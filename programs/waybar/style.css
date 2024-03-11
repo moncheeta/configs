@@ -7,47 +7,47 @@
 }
 
 window#waybar {
-    background: #fabd2f;
+    background: #d0bc00;
 }
 
 .modules-left {
-    background: #1b1b1b;
+    background: #000000;
     padding-left: 0px;
 }
 
 .modules-right {
-    background: #1b1b1b;
+    background: #000000;
     padding-right: 0px;
 }
 
 #tags button {
-    color: #ebdbb2;
-    border-color: #1b1b1b;
+    color: #ffffff;
+    border-color: #000000;
     border-radius: 0px;
     padding-left: 5px;
     padding-right: 5px;
 }
 
 #tags button.focused {
-    color: #1b1b1b;
-    background: #fabd2f;
-    border-color: #fabd2f;
+    color: #000000;
+    background: #d0bc00;
+    border-color: #d0bc00;
 }
 
 #tags button:hover {
     color: #1b1b1b;
-    background: #fabd2f;
-    border-color: #fabd2f;
+    background: #d0bc00;
+    border-color: #d0bc00;
 }
 
 #window, #mpris, #pulseaudio, #backlight, #idle_inhibitor, #bluetooth, #network, #battery, #clock {
-    color: #ebdbb2;
+    color: #ffffff;
     padding-left: 8px;
     padding-right: 8px;
 }
 
 #battery.warning:not(.charging) {
-    color: #fabd2f;
+    color: #d0bc00;
 }
 
 @keyframes blink {
@@ -63,7 +63,7 @@ window#waybar {
 }
 
 #battery.critical:not(.charging) {
-    color: #fb4934;
+    color: #ef8b50;
     animation: blink 1s infinite;
 }
 

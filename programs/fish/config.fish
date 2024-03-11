@@ -20,8 +20,8 @@ set -g GPG_TTY $(tty)
 ## system
 alias bri "light -SO"
 alias vol "volume"
+alias net "nmtui"
 alias blue "bluetuith"
-alias lock "swaylock --fingerprint"
 alias slp "sudo su -c \"echo 'freeze' > /sys/power/state\""
 alias res "loginctl reboot"
 alias shut "loginctl poweroff"
@@ -67,7 +67,7 @@ alias skip "playerctl next"
 alias rewind "playerctl previous"
 
 ## git
-alias clone "git clone"
+alias clone "gh repo clone"
 alias dif "git status"
 alias add "git add"
 alias commit "git commit"

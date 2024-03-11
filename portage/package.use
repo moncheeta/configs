@@ -8,6 +8,7 @@ sys-apps/openrc -netifrc
 app-admin/sudo -sendmail
 sys-apps/fwupd -minimal gnutls amdgpu fastboot flashrom nvme uefi
 virtual/libusb udev
+dev-libs/libusb udev
 
 ## graphics
 media-libs/mesa X
@@ -38,7 +39,7 @@ x11-libs/libxkbcommon X
 media-libs/libepoxy X
 
 ## bar
-gui-apps/waybar network
+gui-apps/waybar network experimental
 
 ## music
 media-sound/cmus -mad -vorbis
@@ -48,3 +49,5 @@ www-client/firefox openh264 system-png system-python-libs -telementry
 media-libs/libpng apng
 media-libs/libvpx postproc
 
+## minecraft
+app-crypt/gcr gtk

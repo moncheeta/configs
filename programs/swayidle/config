@@ -1,2 +1,1 @@
-before-sleep swaylock --fingerprint
-timeout 30 swaylock --fingerprint
+timeout 60 lock

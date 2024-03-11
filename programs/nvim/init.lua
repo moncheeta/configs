@@ -78,7 +78,6 @@ vim.keymap.set('n', "<leader>q", function()
 	vim.cmd("qa")
 end)
 vim.keymap.set('n', "<leader>x", "<cmd>wq!<cr>")
-vim.keymap.set('n', "<leader>c", "<cmd>wq<cr>")
 vim.keymap.set('n', "<leader>h", "<cmd>vsplit<cr>")
 vim.keymap.set('n', "<leader>v", "<cmd>split<cr>")
 
@@ -103,15 +102,15 @@ require("lazy").setup({
 			quit_key = "<SPC>",
 		},
 		keys = {
-			{ "<leader>jw", "<cmd>HopWord<cr>" },
-			{ "<leader>jl", "<cmd>HopLineStart<cr>" },
-			{ "<leader>ja", "<cmd>HopAnywhere<cr>" },
+			{ "<leader>w", "<cmd>HopWord<cr>" },
+			{ "<leader>l", "<cmd>HopLineStart<cr>" },
+			{ "<leader>a", "<cmd>HopAnywhere<cr>" },
 		},
 	},
 	{
 		"j-morano/buffer_manager.nvim",
 		keys = {
-			{ "<leader>jb", "<cmd>lua require('buffer_manager.ui').toggle_quick_menu()<cr>" },
+			{ "<leader>b", "<cmd>lua require('buffer_manager.ui').toggle_quick_menu()<cr>" },
 		},
 	},
     -- selection
@@ -133,22 +132,20 @@ require("lazy").setup({
         "morhetz/gruvbox",
         config = function()
             vim.g.gruvbox_contrast_dark = "hard"
-            vim.cmd("colorscheme gruvbox")
+            -- vim.cmd("colorscheme gruvbox")
         end,
     },
     {
         "tpope/vim-vividchalk",
-        -- config = function()
-        --     vim.cmd("colorscheme vividchalk")
-        --     vim.cmd("hi CursorLine term=bold cterm=bold gui=bold")
-        --     vim.cmd("hi CursorLineNr term=bold cterm=bold gui=bold")
-        -- end,
+        config = function()
+            vim.cmd("colorscheme vividchalk")
+        end,
     },
     {
         "bluz71/vim-moonfly-colors",
-        -- config = function()
+        config = function()
         --     vim.cmd("colorscheme moonfly")
-        -- end,
+        end,
     },
     {
         "lukas-reineke/indent-blankline.nvim",
@@ -367,9 +364,9 @@ require("lazy").setup({
 			{ "<leader>i", "<cmd>lua vim.lsp.buf.hover()<cr>" },
 			{ "<leader>d", "<cmd>lua vim.lsp.buf.definition()<cr>" },
 			{ "<leader>r", "<cmd>lua vim.lsp.buf.rename()<cr>" },
-			{ "<leader>u", "<cmd>lua vim.lsp.buf.code_action()<cr>" },
-			{ "<leader>e", "<cmd>Telescope diagnostics<cr>" },
+			{ "<leader>c", "<cmd>lua vim.lsp.buf.code_action()<cr>" },
 			{ "<leader>s", "<cmd>Telescope lsp_workspace_symbols<cr>" },
+			{ "<leader>e", "<cmd>Telescope diagnostics<cr>" },
 		},
 	},
 	-- git
