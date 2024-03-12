@@ -1,5 +1,9 @@
 /programs/bluetuith/
 /programs/devcert/
+/programs/fish/completions/
+/programs/fish/conf.d/
+/programs/fish/functions/
+/programs/fish/fish_variables
 /programs/gh/
 /programs/gh-dash/
 /programs/git/
