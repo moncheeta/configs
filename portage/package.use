@@ -13,6 +13,11 @@ dev-libs/libusb udev
 ## graphics
 media-libs/mesa X
 x11-libs/libdrm video_cards_radeon
+x11-libs/libxkbcommon X
+x11-libs/cairo X
+dev-cpp/cairomm X
+x11-libs/gtk+ X
+dev-cpp/gtkmm X
 
 ## networking
 net-misc/networkmanager -modemmanager -bluetooth
@@ -27,16 +32,20 @@ media-sound/pulseaudio -daemon
 app-emulation/qemu gtk -oss -vnc
 
 # development
+## zig
 sys-devel/llvm zstd
 sys-devel/lld zstd
+
+## rust
 dev-lang/rust rust-src parallel-compiler system-llvm rust-analyzer rustfmt clippy miri
+
+## java
+app-text/xmlto text
 
 # desktop
 ## window manager
-gui-wm/river X
 gui-libs/wlroots X
-x11-libs/libxkbcommon X
-media-libs/libepoxy X
+gui-wm/river X
 
 ## bar
 gui-apps/waybar network experimental

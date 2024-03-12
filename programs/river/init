@@ -37,7 +37,7 @@ riverctl map normal Super T spawn footclient
 riverctl map normal Super W spawn firefox
 
 # window actions
-riverctl map normal Super+Shift Return zoom
+riverctl map normal Super Return zoom
 riverctl map normal Super+Shift F toggle-fullscreen
 riverctl map normal Super+Shift Space toggle-float
 riverctl map normal Super+Shift C close

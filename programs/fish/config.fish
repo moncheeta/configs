@@ -68,7 +68,8 @@ alias rewind "playerctl previous"
 
 ## git
 alias clone "gh repo clone"
-alias dif "git status"
+alias mis "git status"
+alias dif "git diff"
 alias add "git add"
 alias commit "git commit"
 alias push "git push"
@@ -76,7 +77,7 @@ alias pull "git pull"
 alias merge "git merge"
 alias rebase "git rebase"
 alias branch "git branch"
-alias checkout "git checkout"
+alias change "git checkout"
 alias worktree "git worktree"
 
 ### github
