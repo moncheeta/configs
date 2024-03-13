@@ -34,6 +34,9 @@ PASSWORD_STORE_DIR DEFAULT=${DATA_HOME}/password-store
 # git
 GIT_CONFIG_GLOBAL DEFAULT=${CONFIG_HOME}/git/config
 
+# zig
+PATH DEFAULT=${PATH}:@{HOME}/src/zig-bootstrap/out/zig-native-linux-gnu-native
+
 # c/c++
 CCACHE_DIR=/var/cache/ccache
 PATH DEFAULT=${CCACHE_DIR}/bin:${PATH}
