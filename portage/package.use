@@ -19,6 +19,10 @@ dev-cpp/cairomm X
 x11-libs/gtk+ X
 dev-cpp/gtkmm X
 
+## libraries
+media-libs/imlib2 X
+net-libs/libwebsockets libuv
+
 ## networking
 net-misc/networkmanager -modemmanager -bluetooth
 net-wireless/wpa_supplicant dbus

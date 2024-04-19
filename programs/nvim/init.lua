@@ -129,22 +129,16 @@ require("lazy").setup({
     },
 	-- ui
     {
-        "morhetz/gruvbox",
+        "iibe/gruvbox-high-contrast",
         config = function()
             vim.g.gruvbox_contrast_dark = "hard"
-            -- vim.cmd("colorscheme gruvbox")
+            vim.cmd("colorscheme gruvbox-high-contrast")
         end,
     },
     {
         "tpope/vim-vividchalk",
         config = function()
-            vim.cmd("colorscheme vividchalk")
-        end,
-    },
-    {
-        "bluz71/vim-moonfly-colors",
-        config = function()
-        --     vim.cmd("colorscheme moonfly")
+            -- vim.cmd("colorscheme vividchalk")
         end,
     },
     {
@@ -397,6 +391,12 @@ require("lazy").setup({
             { "<A-Left>", "<cmd>TmuxNavigateLeft<cr>" },
             { "<A-Right>", "<cmd>TmuxNavigateRight<cr>" },
         },
+    },
+    {
+        "akinsho/flutter-tools.nvim",
+        config = function()
+            require("flutter-tools").setup()
+        end,
     },
     "wakatime/vim-wakatime",
     "nvim-lua/plenary.nvim",

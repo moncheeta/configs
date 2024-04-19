@@ -49,6 +49,9 @@ PATH DEFAULT=${PATH}:${CARGO_HOME}/bin
 GOPATH DEFAULT=${DATA_HOME}/go
 PATH DEFAULT=${PATH}:${GOPATH}/bin
 
+# flutter
+PATH DEFAULT=${PATH}:@{HOME}/sdk/flutter/bin
+
 # wakatime
 WAKATIME_HOME DEFAULT=${DATA_HOME}/wakatime
 

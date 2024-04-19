@@ -22,14 +22,14 @@ alias bri "light -SO"
 alias vol "volume"
 alias net "nmtui"
 alias blue "bluetuith"
-alias slp "sudo su -c \"echo 'freeze' > /sys/power/state\""
+alias slp "swaylock --fingerprint &; sudo su -c \"echo 'freeze' > /sys/power/state\""
 alias res "loginctl reboot"
 alias shut "loginctl poweroff"
 
 ## files
 alias up "cd .."
-alias ls "eza -A --git"
-alias l "eza -lA --git"
+alias ls "eza --git"
+alias l "eza -l --git"
 alias ll "eza -lA --git"
 alias cp "cp -rv"
 alias mv "mv -v"
@@ -50,6 +50,9 @@ alias web "$BROWSER"
 alias top "htop"
 alias dsk "duf"
 
+## development
+alias zig "/home/moncheeta/sdk/zig-bootstrap/out/zig-native-linux-gnu-native/zig"
+
 ### desktop environment
 alias wm "dbus-launch --exit-with-session river"
 
@@ -68,7 +71,7 @@ alias rewind "playerctl previous"
 
 ## git
 alias clone "gh repo clone"
-alias mis "git status"
+alias state "git status"
 alias dif "git diff"
 alias add "git add"
 alias commit "git commit"

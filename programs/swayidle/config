@@ -1,1 +1,2 @@
+lock swaylock --fingerprint
 timeout 60 lock

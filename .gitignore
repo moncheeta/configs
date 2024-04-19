@@ -1,15 +1,20 @@
-/programs/bluetuith/
+/programs/git/
 /programs/devcert/
+/programs/gh/
+/programs/gh-dash/
 /programs/fish/completions/
 /programs/fish/conf.d/
 /programs/fish/functions/
 /programs/fish/fish_variables
-/programs/gh/
-/programs/gh-dash/
-/programs/git/
 /programs/nvim/lazy-lock.json
-/programs/pulse/
-/programs/sc-im/
 /programs/tmux/plugins/tmux-sensible/
 /programs/tmux/plugins/tmux-gruvbox-truecolor/
-
+/programs/bluetuith/
+/programs/pulse/
+/programs/sc-im/
+/programs/.android/
+/programs/Android\ Open\ Source\ Project/
+/programs/Google/
+/programs/cef_user_data/
+/programs/go/
+/programs/tool_state/
