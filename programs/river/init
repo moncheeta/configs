@@ -7,9 +7,9 @@ riverctl map normal Super+Shift E exit
 riverctl keyboard-layout "us(colemak)"
 for mode in normal locked
 do
-    riverctl map $mode None XF86AudioRaiseVolume spawn "volume up"
-    riverctl map $mode None XF86AudioLowerVolume spawn "volume down"
-    riverctl map $mode None XF86AudioMute spawn "volume toggle"
+    riverctl map $mode None XF86AudioRaiseVolume spawn "vol up"
+    riverctl map $mode None XF86AudioLowerVolume spawn "vol down"
+    riverctl map $mode None XF86AudioMute spawn "vol toggle"
 
     riverctl map $mode None XF86MonBrightnessUp spawn "light -AO 5"
     riverctl map $mode None XF86MonBrightnessDown spawn "light -UO 5"
@@ -35,6 +35,7 @@ riverctl spawn "foot --server"
 ## keymaps
 riverctl map normal Super T spawn footclient
 riverctl map normal Super W spawn firefox
+riverctl map normal Super S spawn scr
 
 # window actions
 riverctl map normal Super Return zoom

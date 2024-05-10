@@ -19,10 +19,8 @@ set -g GPG_TTY $(tty)
 # aliases
 ## system
 alias bri "light -SO"
-alias vol "volume"
-alias net "nmtui"
-alias blue "bluetuith"
-alias slp "swaylock --fingerprint &; sudo su -c \"echo 'freeze' > /sys/power/state\""
+alias lck "loginctl lock-session"
+alias slp "loginctl lock-session; loginctl suspend"
 alias res "loginctl reboot"
 alias shut "loginctl poweroff"
 
@@ -30,7 +28,8 @@ alias shut "loginctl poweroff"
 alias up "cd .."
 alias ls "eza --git"
 alias l "eza -l --git"
-alias ll "eza -lA --git"
+alias ll "eza -l --git"
+alias la "eza -lA --git"
 alias cp "cp -rv"
 alias mv "mv -v"
 alias rm "trash"
@@ -49,9 +48,8 @@ alias web "$BROWSER"
 ### system
 alias top "htop"
 alias dsk "duf"
-
-## development
-alias zig "/home/moncheeta/sdk/zig-bootstrap/out/zig-native-linux-gnu-native/zig"
+alias net "nmtui"
+alias blue "bluetuith"
 
 ### desktop environment
 alias wm "dbus-launch --exit-with-session river"

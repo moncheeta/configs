@@ -1,2 +1,4 @@
-lock swaylock --fingerprint
-timeout 60 lock
+lock "swaylock --fingerprint"
+before-sleep "loginctl lock-session"
+timeout 60 "loginctl lock-session"
+timeout 90 "loginctl suspend"

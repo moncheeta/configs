@@ -11,8 +11,8 @@ vim.o.clipboard = "unnamedplus"
 
 -- formatting
 vim.o.expandtab = true
-vim.o.tabstop = 4
-vim.o.shiftwidth = 4
+vim.o.tabstop = 2
+vim.o.shiftwidth = 2
 vim.api.nvim_create_autocmd("BufWritePre", {
     callback = function()
         local cursor_position = vim.fn.getpos('.')

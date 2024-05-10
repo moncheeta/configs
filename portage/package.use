@@ -49,6 +49,7 @@ app-text/xmlto text
 # desktop
 ## window manager
 gui-libs/wlroots X
+media-libs/libepoxy X
 gui-wm/river X
 
 ## bar
@@ -61,6 +62,10 @@ media-sound/cmus -mad -vorbis
 www-client/firefox openh264 system-png system-python-libs -telementry
 media-libs/libpng apng
 media-libs/libvpx postproc
+
+## email
+mail-client/neomutt notmuch sasl
+media-gfx/qrencode png
 
 ## minecraft
 app-crypt/gcr gtk
