@@ -16,6 +16,9 @@ end
 ## gpg
 set -g GPG_TTY $(tty)
 
+## ssh
+set -g TERM "xterm-256color"
+
 # aliases
 ## system
 alias bri "light -SO"
@@ -43,6 +46,7 @@ alias clr "clear"
 
 ## programs
 alias ed "$EDITOR"
+alias vim "nvim"
 alias web "$BROWSER"
 
 ### system

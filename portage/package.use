@@ -32,16 +32,26 @@ net-wireless/bluez deprecated
 media-video/pipewire sound-server
 media-sound/pulseaudio -daemon
 
+## images
+media-gfx/imagemagick png jpeg jpegxl svg webp xml
+
 ## virtualization
-app-emulation/qemu gtk -oss -vnc
+app-emulation/qemu gtk -oss -sdl -vnc
+app-emulation/bochs gdb -smp
 
 # development
+## debugging
+dev-debug/gdb xml
+
+## docker
+app-containers/docker container-init
+
 ## zig
 sys-devel/llvm zstd
 sys-devel/lld zstd
 
 ## rust
-dev-lang/rust rust-src parallel-compiler system-llvm rust-analyzer rustfmt clippy miri
+dev-lang/rust rust-src parallel-compiler system-llvm rust-analyzer rustfmt clippy miri abi_x86_32
 
 ## java
 app-text/xmlto text
@@ -58,6 +68,9 @@ gui-apps/waybar network experimental
 ## music
 media-sound/cmus -mad -vorbis
 
+## media
+media-video/ffmpeg mp3
+
 ## firefox
 www-client/firefox openh264 system-png system-python-libs -telementry
 media-libs/libpng apng
@@ -66,6 +79,71 @@ media-libs/libvpx postproc
 ## email
 mail-client/neomutt notmuch sasl
 media-gfx/qrencode png
+dev-db/sqlite abi_x86_32
+sys-libs/readline abi_x86_32
 
 ## minecraft
 app-crypt/gcr gtk
+
+## steam
+x11-libs/libX11 abi_x86_32
+x11-libs/libXau abi_x86_32
+x11-libs/libxcb abi_x86_32
+x11-libs/libXdmcp abi_x86_32
+virtual/opengl abi_x86_32
+media-libs/mesa abi_x86_32
+dev-libs/expat abi_x86_32
+media-libs/libglvnd abi_x86_32
+sys-libs/zlib abi_x86_32
+x11-libs/libdrm abi_x86_32
+x11-libs/libxshmfence abi_x86_32
+x11-libs/libXext abi_x86_32
+x11-libs/libXxf86vm abi_x86_32
+x11-libs/libXfixes abi_x86_32
+app-arch/zstd abi_x86_32
+sys-devel/llvm abi_x86_32
+x11-libs/libXrandr abi_x86_32
+x11-libs/libXrender abi_x86_32
+dev-libs/libffi abi_x86_32
+sys-libs/ncurses abi_x86_32
+dev-libs/libxml2 abi_x86_32
+dev-libs/icu abi_x86_32
+sys-libs/gpm abi_x86_32
+virtual/libelf abi_x86_32
+dev-libs/elfutils abi_x86_32
+app-arch/bzip2 abi_x86_32
+dev-libs/nspr abi_x86_32
+dev-libs/nss abi_x86_32
+net-libs/libndp abi_x86_32
+x11-libs/extest abi_x86_32
+dev-libs/libevdev abi_x86_32
+dev-libs/wayland abi_x86_32
+virtual/rust abi_x86_32
+dev-lang/rust-bin abi_x86_32
+x11-libs/libpciaccess abi_x86_32
+sys-devel/clang abi_x86_32
+media-libs/fontconfig abi_x86_32
+sys-libs/libudev-compat abi_x86_32
+media-libs/libpulse abi_x86_32
+media-libs/libsndfile abi_x86_32
+net-libs/libasyncns abi_x86_32
+sys-apps/dbus X abi_x86_32
+dev-libs/glib abi_x86_32
+dev-libs/libpcre2 abi_x86_32
+sys-apps/util-linux abi_x86_32
+media-libs/flac abi_x86_32
+media-libs/libogg abi_x86_32
+media-libs/libvorbis abi_x86_32
+media-libs/opus abi_x86_32
+media-sound/lame abi_x86_32
+media-sound/mpg123-base abi_x86_32
+media-libs/freetype abi_x86_32
+media-libs/libpng abi_x86_32
+virtual/libintl abi_x86_32
+virtual/libudev abi_x86_32
+sys-apps/systemd-utils abi_x86_32
+sys-libs/libcap abi_x86_32
+sys-libs/pam abi_x86_32
+virtual/libiconv abi_x86_32
+x11-libs/xcb-util-keysyms abi_x86_32
+
